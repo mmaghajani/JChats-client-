@@ -15,7 +15,7 @@ public class StartPageFrame extends JFrame {
 	private int height ;
 
 	
-	public StartPageFrame(){
+	public StartPageFrame(String hostName){
 		super() ;
 		
 		
@@ -50,7 +50,7 @@ public class StartPageFrame extends JFrame {
 		ImageIcon icon1 = new ImageIcon(getClass().getResource("icon.png"));
 		this.setIconImage(icon1.getImage());
 		
-		sp = new StartPagePanel(this) ;
+		sp = new StartPagePanel(this , hostName) ;
 		sp.setSize(width, height);
 		sp.setLocation(0, 0);
 		

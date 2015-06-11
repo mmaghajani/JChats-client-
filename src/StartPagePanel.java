@@ -55,7 +55,7 @@ public class StartPagePanel extends JPanel {
 
 	public static int basse = 0;
 
-	public StartPagePanel(StartPageFrame f) {
+	public StartPagePanel(StartPageFrame f , String hostName) {
 
 		super();
 
@@ -223,7 +223,7 @@ public class StartPagePanel extends JPanel {
 						x[1] = (byte) 254;
 						x[2] = 119;
 						x[3] = 107;
-						Socket client = new Socket(InetAddress.getByName("IMAN"),
+						Socket client = new Socket(InetAddress.getByName(hostName),
 								5000);
 						BufferedReader br = new BufferedReader(
 								new InputStreamReader(client.getInputStream()));
@@ -421,7 +421,7 @@ public class StartPagePanel extends JPanel {
 					e.printStackTrace();
 				}
 
-				EnrollmentPageFrame EPF = new EnrollmentPageFrame();
+				EnrollmentPageFrame EPF = new EnrollmentPageFrame(hostName);
 
 				try {
 					UIManager

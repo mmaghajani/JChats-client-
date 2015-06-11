@@ -15,7 +15,7 @@ public class EnrollmentPageFrame extends JFrame {
 	private int widthScreen = (int)getToolkit().getScreenSize().getWidth();
 	private EnrollmentPagePanel backGround ;
 	
-	public EnrollmentPageFrame(){
+	public EnrollmentPageFrame(String hostName){
 		
 		super( "Enrollment Form" ) ;
 		try {
@@ -43,7 +43,7 @@ public class EnrollmentPageFrame extends JFrame {
 		ImageIcon icon = new ImageIcon(getClass().getResource("icon.png"));
 		this.setIconImage(icon.getImage());
 		
-		backGround = new EnrollmentPagePanel(this) ;
+		backGround = new EnrollmentPagePanel(this , hostName ) ;
 		
 		getContentPane().add( backGround , BorderLayout.CENTER) ;
 		

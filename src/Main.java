@@ -14,8 +14,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stu
-
-		StartPageFrame sp = new StartPageFrame();
+		
+		String hostName = "MMA" ;
+		StartPageFrame sp = new StartPageFrame(hostName);
 
 	}
 

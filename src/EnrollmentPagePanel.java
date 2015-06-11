@@ -50,7 +50,7 @@ public class EnrollmentPagePanel extends JPanel {
 	private Socket client;
 	private BufferedReader br;
 
-	public EnrollmentPagePanel(EnrollmentPageFrame en) {
+	public EnrollmentPagePanel(EnrollmentPageFrame en , String hostName ) {
 		// TODO Auto-generated constructor stub
 		super();
 		this.e = en;
@@ -275,7 +275,7 @@ public class EnrollmentPagePanel extends JPanel {
 						x[1] = (byte) 254;
 						x[2] = 119;
 						x[3] = 107;
-						Socket client = new Socket(InetAddress.getByName("IMAN"),
+						Socket client = new Socket(InetAddress.getByName(hostName),
 								5000);
 						BufferedReader br = new BufferedReader(
 								new InputStreamReader(client.getInputStream()));
