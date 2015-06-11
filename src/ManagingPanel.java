@@ -344,6 +344,9 @@ public class ManagingPanel extends JPanel {
 							e1.printStackTrace();
 						}
 					}
+					else{
+						
+					}
 				}
 
 				if (message.getMessage().equals("You are accepted")) {
