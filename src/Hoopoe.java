@@ -2,7 +2,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -51,10 +55,17 @@ public class Hoopoe extends JPanel{
 		
 		Graphics2D g2d = (Graphics2D)g ;
 		
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                RenderingHints.VALUE_ANTIALIAS_ON);
+		g2d.setRenderingHint(RenderingHints.KEY_RENDERING,
+				RenderingHints.VALUE_RENDER_QUALITY);
 		
-		Image image1 = new ImageIcon( getClass().getResource("hoopoe.png")).getImage() ;
+		BufferedImage image1 = null ;
+		try {
+			image1 = ImageIO
+					.read(new File("src/hoopoe.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		g2d.drawImage(image1, xPos ,yPos ,xSize , ySize, null ) ;
 	}
